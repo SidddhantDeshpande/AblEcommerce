@@ -1,0 +1,23 @@
+<div class="container-fluid mt-4">
+   <div class="text-center" aria-hidden="true">
+     <h1> ABOUT OUR WEBSITE AND OUTCOMES  </h1>
+   </div>
+
+    <div class="container-fluid mt-4">
+       <div class="row mx-auto">
+
+         {% for b in information %}
+      <div class="card mx-auto mb-3" style="width: 18rem;">
+        <img src="{{b.image.url}}" style="height: 250px;width: 250px;" class="card-img-top" alt="Caption">
+
+          <div class="card-body">
+            <h1 class="card-title">ABOUT OUR WORK</h1>
+            <p class="card-text"><b> {{b.information}}</b></p>
+
+
+           </div>
+ </div>
+  {% endfor %}
+</div>
+</div>
+</div>

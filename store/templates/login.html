@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+
+<div class="container">
+    <div class="p-4 m-4">
+        <div class="col-lg-4 my-4 mx-auto border rounded pt-4 ps-4 px-4 ">
+            <h3 class = "alert alert-default my-4 ">Login Here</h3>
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                {%if error%}
+                <div class="alert alert-danger" role="alert">
+                   {{ error}}
+                </div>
+                {% endif %}
+                 
+                <!--email-->
+                 <div class="form-group">
+                   <label for="">Email</label>
+                   <input type="email" name="email" id="" value="{{values.email}}" class="form-control" >
+                   
+                 </div>   
+                
+                <!--password-->
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="text" name="phone" id="" class="form-control" placeholder="8888855555"
+                        aria-describedby="helpId">
+                
+                </div>
+                <!--Contact Number-->
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="" value="{{values.phone}}" class="form-control" placeholder="****" aria-describedby="helpId">
+                
+                </div>
+
+                <div class="form-group py-3">
+                    <input class="btn btn-sm btn-info" type="Submit" value="Login">
+                </div>
+
+               
+                
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}
